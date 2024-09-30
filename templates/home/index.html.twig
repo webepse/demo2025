@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {% if name == "Jordan" %}
+        <h2>Hello {{ name }}</h2>
+    {% else %}
+        <h3>Bonjour {{ name }}</h3>    
+    {% endif %}    
+
+    <h4>numéro: {{number}}</h4>
+
+    {# {% for c in 0..15 %}
+        <div>{{c}}</div>
+    {% endfor %} #}
+
+    {# commentaire #}
+
+    {% for key, value in joueurs %}
+        {% if loop.last %}
+            <div style="color:red;">{{ loop.index0 }} - {{key}} - {{value}}</div>
+        {% else %}
+             <div>{{ loop.index0 }} - {{key}} - {{value}}</div>    
+        {% endif %}
+       
+    {% endfor %}
+
+    {% set a = "value" %}
+
+    <div>{{a}}</div>
+    <div>{{path('testpage')}}</div>
+
+    <a href="{{path('testpage')}}">lien vers page test</a>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code>F:/SymfoStudentDoc2025/demo/src/Controller/HomeController.php</code></li>
+        <li>Your template at <code>F:/SymfoStudentDoc2025/demo/templates/home/index.html.twig</code></li>
+    </ul>
+</div>
+{% endblock %}
