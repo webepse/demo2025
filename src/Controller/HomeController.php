@@ -39,6 +39,30 @@ class HomeController extends AbstractController
 
         return $this->render("home/test.html.twig");
     }
+
+    #[Route("/blog/new", name: "new_blog")]
+    public function new(): Response
+    {
+        return $this->render("home/new.html.twig");
+    }
+
+    #[Route("/blog/{id}/{page}", name: "blog")]
+    public function blogShow(int|string $id, $page): Response
+    {
+        // appel model
+    
+
+        // réponse du modèle
+
+        // décision de ce que tu affiches
+
+        return $this->render("home/blog.html.twig",[
+            'id' => $id,
+            'page' => $page
+        ]);
+    }
+
+   
 }
 
 
